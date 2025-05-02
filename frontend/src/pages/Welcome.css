@@ -1,0 +1,500 @@
+/* Welcome.css - Enhanced Purple/Indigo Theme with Better Contrast */
+
+:root {
+  --primary: #7c3aed; /* Violet-600 - deeper purple for better visibility */
+  --primary-dark: #6d28d9; /* Violet-700 */
+  --primary-darker: #5b21b6; /* Violet-800 */
+  --primary-light: #c4b5fd; /* Violet-300 */
+  --accent: #a855f7; /* Purple-500 */
+  --accent-dark: #9333ea; /* Purple-600 */
+  --text-light: #ffffff; /* Pure white for better contrast */
+  --text-dark: #1e1b4b; /* Indigo-950 - darker text for better readability */
+  --text-muted: #4c1d95; /* Violet-900 - darker muted text */
+  --bg-light: #ede9fe; /* Violet-50 */
+  --bg-gradient-start: #f5f3ff; /* Violet-50 */
+  --bg-gradient-end: #ddd6fe; /* Violet-200 */
+}
+
+/* Base styling and animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Main container styling */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+      circle at 30% 20%,
+      rgba(165, 180, 252, 0.2) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(192, 132, 252, 0.15) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+/* Header styling */
+.welcome-header {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 2rem; /* Increased size */
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(
+    --text-light
+  ); /* Solid color instead of gradient for better visibility */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added text shadow for better contrast */
+}
+
+.beta-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  margin-left: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(192, 132, 252, 0.4);
+  animation: pulse 3s infinite;
+}
+
+.login-button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.login-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content styling - Moving content up */
+.welcome-main {
+  flex-grow: 1;
+  padding: 0rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: calc(100vh - 80px);
+}
+
+.welcome-content {
+  animation: fadeIn 1s ease-out forwards;
+  max-width: 800px;
+  margin: -80px auto 0; /* Added negative margin to move content up */
+  padding-bottom: 2rem;
+}
+
+.welcome-main h2 {
+  font-size: 3.5rem; /* Increased size */
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  animation: slideUp 0.8s ease-out forwards;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-text {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  font-size: 4rem; /* Make this text even larger */
+  display: inline-block;
+}
+
+.welcome-main p {
+  font-size: 1.35rem;
+  color: var(--text-muted);
+  margin: 2rem auto 3rem auto;
+  line-height: 1.7;
+  animation: slideUp 1s ease-out 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  max-width: 80%;
+  font-weight: 500; /* Medium weight for better readability */
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4; /* Slightly reduced opacity */
+  filter: blur(80px);
+}
+
+.circle-1 {
+  width: 350px;
+  height: 350px;
+  background-color: rgba(139, 92, 246, 0.2); /* Violet-500 */
+  top: 10%;
+  left: -10%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(192, 132, 252, 0.15); /* Purple-400 */
+  bottom: 10%;
+  right: -5%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(168, 85, 247, 0.15); /* Purple-500 */
+  top: 40%;
+  right: 15%;
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Button styling */
+.create-button {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  display: inline-block;
+}
+
+.create-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.create-button:hover {
+  background: linear-gradient(
+    to right,
+    var(--primary-dark),
+    var(--primary-darker)
+  );
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.create-button:hover::before {
+  left: 100%;
+}
+
+.create-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Add these styles for the P-logo integration */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  background-color: var(--text-light);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.p-logo {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo:hover .logo-container {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Add these styles for the button container and existing button */
+
+/* Button container to arrange buttons side by side */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  animation: slideUp 1s ease-out 0.4s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Styling for the existing persona button */
+.existing-button {
+  background: transparent;
+  color: var(--primary-dark);
+  border: 2px solid var(--primary);
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  display: inline-block;
+}
+
+.existing-button:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.existing-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .welcome-main {
+    padding: 0 1.5rem 2rem;
+    min-height: calc(100vh - 70px);
+  }
+
+  .welcome-main h2 {
+    font-size: 2.5rem;
+  }
+
+  .highlight-text {
+    font-size: 3rem;
+  }
+
+  .welcome-main p {
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+    max-width: 95%;
+  }
+
+  .create-button,
+  .existing-button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .decoration-circle {
+    opacity: 0.2;
+  }
+
+  .logo-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+  }
+
+  .button-container {
+    gap: 1rem;
+  }
+
+  .welcome-content {
+    margin: -60px auto 0; /* Less negative margin on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-main {
+    min-height: calc(100vh - 65px);
+  }
+
+  .welcome-main h2 {
+    font-size: 2rem;
+  }
+
+  .highlight-text {
+    font-size: 2.25rem;
+  }
+
+  .welcome-main p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .beta-badge {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.75rem;
+  }
+
+  .create-button,
+  .existing-button {
+    padding: 0.875rem 1.75rem;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .logo-container {
+    width: 34px;
+    height: 34px;
+    margin-right: 6px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .existing-button {
+    margin-top: 0.75rem;
+  }
+
+  .welcome-content {
+    margin: -40px auto 0; /* Even less negative margin on small screens */
+  }
+}
