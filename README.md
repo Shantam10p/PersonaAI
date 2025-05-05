@@ -158,12 +158,12 @@ PersonaAI/
 
 ## 🔮 Future Enhancements
 
-- 🧑‍🎨 Upload custom avatars  
-- 🔊 Add voice/text-to-speech  
-- 📊 Analytics dashboard  
-- 🤖 Support for multiple LLMs  
-- 🔐 Authentication & persona privacy  
-- 🧠 Long-term memory & context retention  
+ 🗣️ Voice-based interaction
+ 🌐 Multilingual support
+ 🧑‍🎨 Custom avatar uploads
+ 🧠 Long-term memory
+ 🔐 Secure login & persona privacy features
+
 
 ---
 
