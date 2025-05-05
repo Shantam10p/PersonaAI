@@ -355,7 +355,6 @@
 
 /* Add these styles for the button container and existing button */
 
-/* Button container to arrange buttons side by side */
 .button-container {
   display: flex;
   flex-wrap: wrap;
@@ -366,7 +365,6 @@
   animation-fill-mode: forwards;
 }
 
-/* Styling for the existing persona button */
 .existing-button {
   background: transparent;
   color: var(--primary-dark);
@@ -393,6 +391,112 @@
 .existing-button:active {
   transform: translateY(-1px);
   box-shadow: 0 6px 15px rgba(99, 102, 241, 0.2);
+}
+
+/* Learn More button and dropdown styling */
+.learn-more-button {
+  background: transparent;
+  color: var(--primary-dark);
+  border: none;
+  padding: 0.75rem 1rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-button:hover {
+  color: var(--primary);
+  background-color: rgba(124, 58, 237, 0.05);
+}
+
+.learn-more-button .arrow {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.learn-more-button .arrow.up {
+  transform: rotate(180deg);
+}
+
+.persona-details-dropdown {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  animation: slideUp 0.5s ease forwards;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-section {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.details-section h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.details-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-section li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.details-section li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.details-section li strong {
+  color: var(--primary-darker);
+  margin-right: 0.25rem;
+}
+
+.details-image {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 240px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
 }
 
 /* Responsive adjustments */
@@ -442,6 +546,19 @@
 
   .welcome-content {
     margin: -60px auto 0; /* Less negative margin on medium screens */
+  }
+
+  .persona-details-dropdown {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+
+  .details-section {
+    order: 1;
+  }
+
+  .details-image {
+    order: 0;
   }
 }
 
@@ -496,5 +613,24 @@
 
   .welcome-content {
     margin: -40px auto 0; /* Even less negative margin on small screens */
+  }
+
+  .learn-more-button {
+    margin-top: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .persona-details-dropdown {
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .details-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .details-section li {
+    font-size: 0.95rem;
   }
 }

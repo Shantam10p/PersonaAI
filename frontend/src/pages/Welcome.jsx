@@ -1,10 +1,16 @@
 // src/pages/Welcome.jsx
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Welcome.css";
-// Import the logo
-import pLogo from "../assets/P-logo.png"; // Adjust file extension if needed (.svg, .jpg, etc.)
+import pLogo from "../assets/P-logo.png";
 
 const Welcome = () => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
     <div className="welcome-container">
       {/* Decorative background elements */}
@@ -36,8 +42,12 @@ const Welcome = () => {
           </p>
 
           <div className="button-container">
-            <button className="create-button">Create Your Persona</button>
-            <button className="existing-button">Use Existing Persona</button>
+            <Link to="/create" className="create-button">
+              Create Your Persona
+            </Link>
+            <Link to="/existing" className="existing-button">
+              Your Personas
+            </Link>
           </div>
         </div>
       </main>
