@@ -13,7 +13,6 @@ PersonaAI enables users to design AI personas with custom communication styles, 
 ## ✨ Features
 
 - 🤖 **Create Custom Personas** – Design personas with unique characteristics  
-- 🎭 **Avatar Selection** – Choose from a range of professional avatars  
 - 💬 **Interactive Chat** – Real-time chat with your created personas  
 - 📝 **Detailed Customization** – Define tone, expertise, and signature phrases  
 - 📱 **Responsive Design** – Works seamlessly across desktop and mobile  
@@ -177,14 +176,6 @@ Contributions are welcome!
 3. Commit your changes: `git commit -m 'Add feature'`  
 4. Push to the branch: `git push origin feature/my-feature`  
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🔗 Project Link
 
