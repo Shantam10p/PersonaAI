@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/edfbd6d0-7f06-49ae-a5a4-efb1cf61b373
 # 💡 PersonaAI
 
 **PersonaAI** is a platform for creating personalized AI personas that represent you professionally. Whether you're a creator, business, or professional, scale your interactions without losing your unique voice.
