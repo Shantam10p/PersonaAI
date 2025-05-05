@@ -22,7 +22,7 @@ PersonaAI enables users to design AI personas with custom communication styles, 
 
 ## 📸 Video Demo
 
-https://github.com/user-attachments/assets/39ecc769-b494-40b3-a8dc-3daa22163f1f
+https://github.com/user-attachments/assets/1bd5282d-a72a-496e-9156-43513fe3cc1f
 
 ---
 
